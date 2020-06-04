@@ -17,6 +17,12 @@
     width: 75%;
 }
 
-#container{
-    background-image: url('file:\\\C:\Users\Nitin Sharma\Desktop\IIP-Project\images\wallapaper.jpg');
+body{
+    background-image: url('https://www.bheldi.com/blog/wp-content/uploads/2019/07/deep-cleaning-dubai.jpg');
+}
+
+form{
+    width: 75%;
+    background-color: lightgray;
+    margin: auto;
 }
