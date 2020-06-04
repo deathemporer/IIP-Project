@@ -1,0 +1,25 @@
+#hostel{
+    color: #0086c3;
+    font-weight: bold;
+}
+
+#manager{
+    color: #ff7043;
+    font-weight: bold;
+}
+
+#links{
+    float: right;
+    justify-content: space-around;
+}
+
+#container{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+}
+
+#card{
+    width: 30%;
+}
+

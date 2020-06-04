@@ -1,0 +1,22 @@
+#hostel{
+    color: #0086c3;
+    font-weight: bold;
+}
+
+#manager{
+    color: #ff7043;
+    font-weight: bold;
+}
+
+#links{
+    float: right;
+    justify-content: space-around;
+}
+
+.col-sm-10{
+    width: 75%;
+}
+
+#container{
+    background-image: url('file:\\\C:\Users\Nitin Sharma\Desktop\IIP-Project\images\wallapaper.jpg');
+}
