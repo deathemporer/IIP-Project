@@ -1,3 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +28,13 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><span id="hostel">HOSTEL</span><span id="manager">MANAGER</span></a>
+            <a class="navbar-brand" href="index.php"><span id="hostel">HOSTEL</span><span id="manager">MANAGER</span></a>
           </div>
           <ul class="nav navbar-nav" id="links">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="room.html">Room Cleaning</a></li>
-            <li><a href="mess.html">Night Mess</a></li>
-            <li><a href="order.html">My Orders</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="room.php">Room Cleaning</a></li>
+            <li><a href="mess.php">Night Mess</a></li>
+            <li><a href="order.php">My Orders</a></li>
           </ul>
         </div>
       </nav>

@@ -1,3 +1,17 @@
+<?php
+// Create connection
+static $conn;
+$conn = mysqli_connect('localhost','root','','iip');
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,20 +29,20 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><span id="hostel">HOSTEL</span><span id="manager">MANAGER</span></a>
+            <a class="navbar-brand" href="index.php"><span id="hostel">HOSTEL</span><span id="manager">MANAGER</span></a>
           </div>
           <ul class="nav navbar-nav" id="links">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="room.html">Room Cleaning</a></li>
-            <li><a href="mess.html">Night Mess</a></li>
-            <li><a href="order.html">My Orders</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li class="active"><a href="room.php">Room Cleaning</a></li>
+            <li><a href="mess.php">Night Mess</a></li>
+            <li><a href="order.php">My Orders</a></li>
           </ul>
         </div>
       </nav>
       
       <div id="container">
         
-        <form class="form-horizontal" id="forms">
+        <form class="form-horizontal" id="forms" method='post'>
             <h1 id="head">Order Room Cleaning</h1> 
             <h2>Enter your details:</h2> <br>
             <div class="form-group">
@@ -68,7 +82,7 @@
         
             <div class="form-group" id="submitbtn">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default" id="submit" onclick="saveData()">Submit</button>
+                <input type="submit" class="btn btn-default" id="submit">Submit</button>
             </div>
             </div>
         </form>
@@ -84,3 +98,19 @@
    
 </body>
 </html>
+
+<?php
+    if($_SERVER['REQUEST_METHOD'] == 'POST') { // Form is Posted
+        // Assign Variables
+        $names = $_POST['name'];
+        $block = $_POST['block'];
+        $rno = $_POST['rno'];
+        $time = $_SESSION['sel1'];
+        // Apply Insertion Query
+        $sql = "INSERT INTO room (room_rno, room_name, room_block, room_time)
+                VALUES ('$rno', '$names', '$block', $time)";
+        $query = mysqli_query($conn, $sql);
+        // Action on Successful Query
+        header("location: index.php");
+    }
+?>
