@@ -1,0 +1,27 @@
+html{
+    font-family: montserrat;
+}
+
+#hostel{
+    color: #0086c3;
+    font-weight: bold;
+}
+
+#manager{
+    color: #ff7043;
+    font-weight: bold;
+}
+
+#links{
+    float: right;
+    justify-content: space-around;
+}
+
+#container{
+    display: grid;
+}
+
+#card{
+    width: 30%;
+    margin: auto;
+}
